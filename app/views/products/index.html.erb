@@ -1,11 +1,5 @@
-<h1>A list of Products</h1>
+<h1>Rainforest Products Home</h1>
 
-<p>New Product</p>
+<% @products.each do |product| %>
 
-<div class="product">
-  <% @products.each do |p| %>
-    <p><%= p.name %></p>
-    <p><%= p.description %></p>
-    <p><%= p.formatted_price %></p>></p>
-  <% end %>
-</div>
+<% end %>

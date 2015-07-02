@@ -1,7 +1,14 @@
-<h1>Your grandiose Product</h1>
+ <h3>Reviews</h3>
 
-<div class="product">
-  <p><%= @product.name %></p>
-  <p><%= @product.description %></p>
-  <p><%= @product.formatted_price %></p>
-</div>
+  <p>Reviews for <%= @product.name %></p>
+
+  <% @product.reviews.each do |review| %>
+    <p>
+      <%= review.comment %>
+      <br>
+      <% if review.user != nil %>
+        <em> by <%= review.user.email %></em>
+        Added on: <%= review.created_at %>
+      <% end %>
+    </p>
+  <% end %>
